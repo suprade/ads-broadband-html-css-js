@@ -1,0 +1,254 @@
+{
+  "411001": {
+    "location": "Pune GPO / Camp",
+    "available": true
+  },
+  "411002": {
+    "location": "Pune City / Shukrawar Peth",
+    "available": true
+  },
+  "411003": {
+    "location": "Khadki",
+    "available": true
+  },
+  "411004": {
+    "location": "Deccan Gymkhana",
+    "available": true
+  },
+  "411005": {
+    "location": "Shivajinagar",
+    "available": true
+  },
+  "411006": {
+    "location": "Yerwada",
+    "available": true
+  },
+  "411007": {
+    "location": "Aundh / Ganeshkhind",
+    "available": true
+  },
+  "411008": {
+    "location": "NCL / Pashan side",
+    "available": true
+  },
+  "411009": {
+    "location": "Parvati",
+    "available": true
+  },
+  "411011": {
+    "location": "Kasba Peth",
+    "available": true
+  },
+  "411012": {
+    "location": "Dapodi",
+    "available": true
+  },
+  "411013": {
+    "location": "Hadapsar",
+    "available": true
+  },
+  "411014": {
+    "location": "Viman Nagar / Kharadi",
+    "available": true
+  },
+  "411015": {
+    "location": "Dhanori / Dighi",
+    "available": true
+  },
+  "411016": {
+    "location": "Model Colony",
+    "available": true
+  },
+  "411017": {
+    "location": "Pimpri Colony",
+    "available": true
+  },
+  "411018": {
+    "location": "Pimpri / Masulkar Colony",
+    "available": true
+  },
+  "411019": {
+    "location": "Chinchwad East",
+    "available": true
+  },
+  "411020": {
+    "location": "Range Hills",
+    "available": true
+  },
+  "411021": {
+    "location": "Sus / Pashan",
+    "available": true
+  },
+  "411022": {
+    "location": "SRPF",
+    "available": true
+  },
+  "411023": {
+    "location": "NDA / Khadakwasla",
+    "available": true
+  },
+  "411024": {
+    "location": "Khadakwasla",
+    "available": true
+  },
+  "411025": {
+    "location": "Donje",
+    "available": true
+  },
+  "411026": {
+    "location": "Bhosari",
+    "available": true
+  },
+  "411027": {
+    "location": "Aundh Camp",
+    "available": true
+  },
+  "411028": {
+    "location": "Gondhale Nagar / Hadapsar",
+    "available": true
+  },
+  "411030": {
+    "location": "Lokmanyanagar",
+    "available": true
+  },
+  "411031": {
+    "location": "CME",
+    "available": true
+  },
+  "411032": {
+    "location": "Airport / Viman Nagar side",
+    "available": true
+  },
+  "411033": {
+    "location": "Chinchwadgaon / Thergaon / Punawale",
+    "available": true
+  },
+  "411034": {
+    "location": "Kasarwadi",
+    "available": true
+  },
+  "411035": {
+    "location": "Akurdi",
+    "available": true
+  },
+  "411036": {
+    "location": "Mundhwa",
+    "available": true
+  },
+  "411037": {
+    "location": "Bibvewadi / Market Yard",
+    "available": true
+  },
+  "411038": {
+    "location": "Kothrud / Bhusari Colony",
+    "available": true
+  },
+  "411039": {
+    "location": "Bhosari Gaon",
+    "available": true
+  },
+  "411040": {
+    "location": "Wanowrie / AFMC",
+    "available": true
+  },
+  "411041": {
+    "location": "Dhayari / Nanded City / Sinhagad Road",
+    "available": true
+  },
+  "411042": {
+    "location": "Bhavani Peth / Ghorpade Peth",
+    "available": true
+  },
+  "411043": {
+    "location": "Dhankawadi",
+    "available": true
+  },
+  "411044": {
+    "location": "PCNT / Pimpri-Chinchwad",
+    "available": true
+  },
+  "411045": {
+    "location": "Baner",
+    "available": true
+  },
+  "411046": {
+    "location": "Ambegaon Budruk / Katraj",
+    "available": true
+  },
+  "411047": {
+    "location": "Lohegaon / Vadgaon Shinde",
+    "available": true
+  },
+  "411048": {
+    "location": "Kondhwa / NIBM Road",
+    "available": true
+  },
+  "411051": {
+    "location": "Anandnagar",
+    "available": true
+  },
+  "411052": {
+    "location": "Karve Nagar",
+    "available": true
+  },
+  "411058": {
+    "location": "Warje",
+    "available": true
+  },
+  "411057": {
+    "location": "Hinjewadi / Wakad",
+    "available": true
+  },
+  "411060": {
+    "location": "Mohammedwadi",
+    "available": true
+  },
+  "411061": {
+    "location": "Pimple Gurav",
+    "available": true
+  },
+  "411062": {
+    "location": "Talawade",
+    "available": true
+  },
+  "411067": {
+    "location": "Aundh",
+    "available": true
+  },
+  "411068": {
+    "location": "Nanded",
+    "available": true
+  },
+  "411069": {
+    "location": "Baner",
+    "available": true
+  },
+  "411070": {
+    "location": "Moshi",
+    "available": true
+  },
+  "411071": {
+    "location": "Bavdhan",
+    "available": true
+  },
+  "411081": {
+    "location": "Charholi",
+    "available": true
+  },
+  "412207": {
+    "location": "Wagholi",
+    "available": true
+  },
+  "412307": {
+    "location": "Manjri",
+    "available": true
+  },
+  "412308": {
+    "location": "Fursungi",
+    "available": true
+  },
+  "654321": {
+    "location": "lona",
+    "available": true
+  }
+}
