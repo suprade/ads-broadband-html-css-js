@@ -331,7 +331,7 @@ if (isHashRoute) {
     params: new URLSearchParams(search)
   };
 }
-
+}
   function renderPage() {
     const { pathname, params } = parseLocation();
     let content;
@@ -354,17 +354,33 @@ if (isHashRoute) {
   }
 
   function navigate(path) {
-    const next = path.startsWith('/') ? path : '/' + path;
-    const current = IS_FILE ? ((window.location.hash || '#/').slice(1) || '/') : (window.location.pathname + window.location.search);
-    if (next === current) { window.scrollTo({top:0,behavior:'smooth'}); return; }
-    if (IS_FILE) {
-      window.history.pushState({}, '', `#${next}`);
-    } else {
-      window.history.pushState({}, '', next);
-    }
-    state.path = next; state.menuOpen = false; state.dropdown = null;
-    renderPage();
+  const next = path.startsWith('/') ? path : '/' + path;
+
+  const useHash =
+    IS_FILE ||
+    window.location.hostname === 'suprade.github.io';
+
+  const current = useHash
+    ? ((window.location.hash || '#/').slice(1) || '/')
+    : (window.location.pathname + window.location.search);
+
+  if (next === current) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
   }
+
+  if (useHash) {
+    window.location.hash = next;
+  } else {
+    window.history.pushState({}, '', next);
+  }
+
+  state.path = next;
+  state.menuOpen = false;
+  state.dropdown = null;
+
+  renderPage();
+}
 
   function initReveals() {
     const els = [...document.querySelectorAll('.reveal-item')];
