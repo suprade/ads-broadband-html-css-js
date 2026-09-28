@@ -214,7 +214,7 @@
   }
 
   function renderOTT() {
-    return `<section class="section ott-section">${reveal('<p class="section-label entertainment-label">Entertainment</p><h2>One connection. Endless entertainment.</h2>',0,'div','section-head')}<div class="ott-row reveal reveal-item"><img src="./assets/net.jpg" alt="Netflix"><img src="./assets/prime.jpg" alt="Amazon Prime Video"><img src="./assets/zee.jpg" alt="ZEE5"><img src="./assets/jio.jpg" alt="JioHotstar"><img src="./assets/purpleLogo.png" alt="Purple TV"></div>${reveal(`${icon('Tv',16)} 350+ HD/SD TV channels`,0,'p','ott-channels')}${reveal('OTT availability depends on the selected plan.',0,'p','ott-note')}</section>`;
+    return `<section class="section ott-section">${reveal('<p class="section-label entertainment-label">Entertainment</p><h2>One connection. Endless entertainment.</h2>',0,'div','section-head')}<div class="ott-row reveal reveal-item"><img src="./assets/net.jpg" alt="Netflix" loading="lazy" decoding="async"><img src="./assets/prime.jpg" alt="Amazon Prime Video" loading="lazy" decoding="async"><img src="./assets/zee.jpg" alt="ZEE5" loading="lazy" decoding="async"><img src="./assets/jio.jpg" alt="JioHotstar" loading="lazy" decoding="async"><img src="./assets/purpleLogo.png" alt="Purple TV" loading="lazy" decoding="async"></div>${reveal(`${icon('Tv',16)} 350+ HD/SD TV channels`,0,'p','ott-channels')}${reveal('OTT availability depends on the selected plan.',0,'p','ott-note')}</section>`;
   }
 
   function renderAvailability() {
