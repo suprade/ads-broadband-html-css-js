@@ -6,7 +6,8 @@
   const IS_FILE =
   window.location.protocol === 'file:' ||
   window.location.hostname === 'localhost' ||
-  window.location.hostname === '127.0.0.1';
+  window.location.hostname === '127.0.0.1' ||
+  window.location.hostname === 'suprade.github.io';
   const API_BASE = 'https://broadband-ads.netlify.app/api';
   const BASE_PATH = '/ads-broadband-html-css-js';
   const NEW_CONNECTION_NUMBER = '8530739900';
