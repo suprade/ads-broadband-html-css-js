@@ -396,12 +396,20 @@
   }
 
   async function submitLead(payload) {
-    const response = await fetch(`${API_BASE}/leads`, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-    let data = {};
-    try { data = await response.json(); } catch {}
-    if (!response.ok) throw new Error(data.message || 'Unable to submit request');
-    return data;
-  }
+  await fetch(
+    "https://script.google.com/macros/s/AKfycbwcXd8dcKqu6AB86k2TVB8TsQWsX6VbwShG_pXLV3Ew0DZqVVoicd8WjoULJfbJju72/exec",
+    {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(payload)
+    }
+  );
+
+  return { success: true };
+}
 
   document.addEventListener('click', async (e) => {
     const routeBtn = e.target.closest('[data-route]');
@@ -461,7 +469,13 @@
       if (Object.keys(errs).length) return;
       const submitBtn = document.getElementById('callback-submit'); submitBtn.disabled = true; submitBtn.textContent='Submitting...'; state.submitting=true;
       try {
-        await submitLead({ name:state.callback.name, mobile:state.callback.mobile, area:state.callback.area, plan:state.callback.plan });
+        await submitLead({
+          name: state.callback.name,
+          mobile: state.callback.mobile,
+          area: state.callback.area,
+          plan: state.callback.plan,
+          source: "Request a Call Back"
+        });
         state.submitted = true;
         document.getElementById('callback-container').innerHTML = `<p class="form-success">${icon('Check',16)} Thanks ${esc(state.callback.name.split(' ')[0] || '')}, our team will call you shortly.</p>`;
       } catch (err) {
@@ -481,7 +495,14 @@
       const err=document.getElementById('connect-error');
       if (!name.trim() || !/^[6-9]\d{9}$/.test(mobile.trim()) || !area.trim()) { err.textContent='Please enter your name, valid 10-digit mobile number and area/pincode.'; return; }
       const btn=e.target.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='Submitting...';
-      try { await submitLead({name:name.trim(),mobile:mobile.trim(),area:area.trim(),plan}); document.getElementById('connect-form-container').innerHTML=`<div class="form-success large-success">${icon('Check',22)} Thanks ${esc(name.split(' ')[0] || '')}. Your request is captured locally for this demo.</div>`; }
+      try {
+  await submitLead({
+    name: name.trim(),
+    mobile: mobile.trim(),
+    area: area.trim(),
+    plan,
+    source: "New Connection"
+  }); document.getElementById('connect-form-container').innerHTML=`<div class="form-success large-success">${icon('Check',22)} Thanks ${esc(name.split(' ')[0] || '')}. Your request is captured locally for this demo.</div>`; }
       catch (ex) { console.error('New connection submission error:',ex); btn.disabled=false; btn.textContent='Request New Connection'; err.textContent='Unable to submit your request. Please try again.'; }
     }
   });
