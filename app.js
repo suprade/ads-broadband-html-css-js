@@ -8,6 +8,7 @@
   window.location.hostname === 'localhost' ||
   window.location.hostname === '127.0.0.1';
   const API_BASE = 'https://broadband-ads.netlify.app/api';
+  const BASE_PATH = '/ads-broadband-html-css-js';
   const NEW_CONNECTION_NUMBER = '8530739900';
   const SUPPORT_NUMBER = '8446522410';
   const NEW_CONNECTION_DISPLAY = '85307 39900';
@@ -315,16 +316,20 @@
 
   function parseLocation() {
     const u = new URL(window.location.href);
-    if (IS_FILE) {
-      const raw = (u.hash || '#/').slice(1) || '/';
-      const normalized = raw.startsWith('/') ? raw : `/${raw}`;
-      const qIndex = normalized.indexOf('?');
-      const pathname = qIndex >= 0 ? normalized.slice(0, qIndex) : normalized;
-      const search = qIndex >= 0 ? normalized.slice(qIndex + 1) : '';
-      return { pathname: pathname || '/', params: new URLSearchParams(search) };
-    }
-    return { pathname: u.pathname || '/', params: u.searchParams };
-  }
+    const isHashRoute = IS_FILE || window.location.hostname === 'suprade.github.io';
+
+if (isHashRoute) {
+  const raw = (u.hash || '#/').slice(1) || '/';
+  const normalized = raw.startsWith('/') ? raw : `/${raw}`;
+  const qIndex = normalized.indexOf('?');
+  const pathname = qIndex >= 0 ? normalized.slice(0, qIndex) : normalized;
+  const search = qIndex >= 0 ? normalized.slice(qIndex + 1) : '';
+
+  return {
+    pathname: pathname || '/',
+    params: new URLSearchParams(search)
+  };
+}
 
   function renderPage() {
     const { pathname, params } = parseLocation();
