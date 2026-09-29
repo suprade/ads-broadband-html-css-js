@@ -441,8 +441,40 @@ if (isHashRoute) {
     if (toggle) { e.stopPropagation(); state.dropdown = state.dropdown === toggle.dataset.dropdownToggle ? null : toggle.dataset.dropdownToggle; renderPage(); return; }
 
     if (e.target.closest('#menu-toggle')) { state.menuOpen = !state.menuOpen; renderPage(); return; }
-    if (e.target.closest('#chat-toggle')) { state.chatbotOpen = !state.chatbotOpen; renderPage(); return; }
-    if (e.target.closest('#chat-close')) { state.chatbotOpen = false; renderPage(); return; }
+    if (e.target.closest('#chat-toggle')) {
+  state.chatbotOpen = !state.chatbotOpen;
+
+  const chat = document.querySelector('.ads-chatbot');
+  const toggleBtn = document.getElementById('chat-toggle');
+
+  if (chat) chat.style.display = state.chatbotOpen ? 'flex' : 'none';
+
+  if (toggleBtn) {
+    toggleBtn.innerHTML = state.chatbotOpen ? icon('X', 25) : '💬';
+    toggleBtn.setAttribute(
+      'aria-label',
+      state.chatbotOpen ? 'Close ADS Assistant' : 'Open ADS Assistant'
+    );
+  }
+
+  return;
+}
+
+if (e.target.closest('#chat-close')) {
+  state.chatbotOpen = false;
+
+  const chat = document.querySelector('.ads-chatbot');
+  const toggleBtn = document.getElementById('chat-toggle');
+
+  if (chat) chat.style.display = 'none';
+
+  if (toggleBtn) {
+    toggleBtn.innerHTML = '💬';
+    toggleBtn.setAttribute('aria-label', 'Open ADS Assistant');
+  }
+
+  return;
+}
 
     const quick = e.target.closest('[data-chat]');
     if (quick) { sendChat(quick.dataset.chat); return; }
